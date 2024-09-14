@@ -1,0 +1,16 @@
+name: Ejecutar Neko
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Instalar Neko
+      run: |
+        sudo apt-get update
+        sudo apt-get install neko
+    - name: Ejecutar Proyektor.n
+      run: neko Proyektor.n
